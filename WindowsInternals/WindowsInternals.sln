@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DirectorySecurity", "Direct
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SecurityPrivilegeMapFileToLargePage", "SecurityPrivilegeMapFileToLargePage\SecurityPrivilegeMapFileToLargePage.vcxproj", "{EC64F278-4AE4-4725-9555-853C62A901EA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskScheduler", "TaskScheduler\TaskScheduler.csproj", "{CE0FAB21-A623-48CE-8688-1F52B391A88D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -147,6 +149,18 @@ Global
 		{EC64F278-4AE4-4725-9555-853C62A901EA}.Release|x64.Build.0 = Release|x64
 		{EC64F278-4AE4-4725-9555-853C62A901EA}.Release|x86.ActiveCfg = Release|Win32
 		{EC64F278-4AE4-4725-9555-853C62A901EA}.Release|x86.Build.0 = Release|Win32
+		{CE0FAB21-A623-48CE-8688-1F52B391A88D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE0FAB21-A623-48CE-8688-1F52B391A88D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE0FAB21-A623-48CE-8688-1F52B391A88D}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{CE0FAB21-A623-48CE-8688-1F52B391A88D}.Debug|x64.Build.0 = Debug|Any CPU
+		{CE0FAB21-A623-48CE-8688-1F52B391A88D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{CE0FAB21-A623-48CE-8688-1F52B391A88D}.Debug|x86.Build.0 = Debug|Any CPU
+		{CE0FAB21-A623-48CE-8688-1F52B391A88D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE0FAB21-A623-48CE-8688-1F52B391A88D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE0FAB21-A623-48CE-8688-1F52B391A88D}.Release|x64.ActiveCfg = Release|Any CPU
+		{CE0FAB21-A623-48CE-8688-1F52B391A88D}.Release|x64.Build.0 = Release|Any CPU
+		{CE0FAB21-A623-48CE-8688-1F52B391A88D}.Release|x86.ActiveCfg = Release|Any CPU
+		{CE0FAB21-A623-48CE-8688-1F52B391A88D}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
