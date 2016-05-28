@@ -10,7 +10,7 @@
 using namespace std;
 using namespace Concurrency;
 
-#define MAX_FILE_SIZE 1048576
+#define MAX_FILE_SIZE 10048576
 #define FILE_DRIVE L"C:\\\\temp\\"
 #define FILE_PATH L"PriorityTestFile.txt"
 

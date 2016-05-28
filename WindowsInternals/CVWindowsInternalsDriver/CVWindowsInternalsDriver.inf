@@ -1,0 +1,90 @@
+;
+; CVWindowsInternalsDriver.inf
+;
+
+[Version]
+Signature="$WINDOWS NT$"
+Class=CodeValue
+ClassGuid={ACB1B05F-9F62-4B2D-921A-60FA646BB502} ; TODO: edit ClassGuid
+Provider=%ManufacturerName%
+CatalogFile=CVWindowsInternalsDriver.cat
+DriverVer= ; TODO: set DriverVer in stampinf property pages
+
+[DestinationDirs]
+DefaultDestDir = 12
+
+; ================= Class section =====================
+
+[ClassInstall32]
+Addreg=SampleClassReg
+
+[SampleClassReg]
+HKR,,,0,%ClassName%
+HKR,,Icon,,-5
+
+[SourceDisksNames]
+1 = %DiskName%,,,""
+
+[SourceDisksFiles]
+CVWindowsInternalsDriver.sys  = 1,,
+
+;*****************************************
+; Install Section
+;*****************************************
+
+[Manufacturer]
+%ManufacturerName%=Standard,NT$ARCH$
+
+[Standard.NT$ARCH$]
+%CVWindowsInternalsDriver.DeviceDesc%=CVWindowsInternalsDriver_Device, Root\CVWindowsInternalsDriver ; TODO: edit hw-id
+
+[CVWindowsInternalsDriver_Device.NT]
+CopyFiles=Drivers_Dir
+
+[Drivers_Dir]
+CVWindowsInternalsDriver.sys
+
+;-------------- Service installation
+[CVWindowsInternalsDriver_Device.NT.Services]
+AddService = CVWindowsInternalsDriver,%SPSVCINST_ASSOCSERVICE%, CVWindowsInternalsDriver_Service_Inst
+
+; -------------- CVWindowsInternalsDriver driver install sections
+[CVWindowsInternalsDriver_Service_Inst]
+DisplayName    = %CVWindowsInternalsDriver.SVCDESC%
+ServiceType    = 1               ; SERVICE_KERNEL_DRIVER
+StartType      = 3               ; SERVICE_DEMAND_START
+ErrorControl   = 1               ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %12%\CVWindowsInternalsDriver.sys
+
+;
+;--- CVWindowsInternalsDriver_Device Coinstaller installation ------
+;
+
+[DestinationDirs]
+CVWindowsInternalsDriver_Device_CoInstaller_CopyFiles = 11
+
+[CVWindowsInternalsDriver_Device.NT.CoInstallers]
+AddReg=CVWindowsInternalsDriver_Device_CoInstaller_AddReg
+CopyFiles=CVWindowsInternalsDriver_Device_CoInstaller_CopyFiles
+
+[CVWindowsInternalsDriver_Device_CoInstaller_AddReg]
+HKR,,CoInstallers32,0x00010000, "WdfCoInstaller$KMDFCOINSTALLERVERSION$.dll,WdfCoInstaller"
+
+[CVWindowsInternalsDriver_Device_CoInstaller_CopyFiles]
+WdfCoInstaller$KMDFCOINSTALLERVERSION$.dll
+
+[SourceDisksFiles]
+WdfCoInstaller$KMDFCOINSTALLERVERSION$.dll=1 ; make sure the number matches with SourceDisksNames
+
+[CVWindowsInternalsDriver_Device.NT.Wdf]
+KmdfService =  CVWindowsInternalsDriver, CVWindowsInternalsDriver_wdfsect
+[CVWindowsInternalsDriver_wdfsect]
+KmdfLibraryVersion = $KMDFVERSION$
+
+[Strings]
+SPSVCINST_ASSOCSERVICE= 0x00000002
+ManufacturerName="CodeValue Windows Internals Course Demo Driver"
+ClassName="Samples" ; TODO: edit ClassName
+DiskName = "CVWindowsInternalsDriver Installation Disk"
+CVWindowsInternalsDriver.DeviceDesc = "CVWindowsInternalsDriver Device"
+CVWindowsInternalsDriver.SVCDESC = "CVWindowsInternalsDriver Service"
