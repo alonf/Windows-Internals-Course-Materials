@@ -84,7 +84,7 @@ KmdfLibraryVersion = $KMDFVERSION$
 [Strings]
 SPSVCINST_ASSOCSERVICE= 0x00000002
 ManufacturerName="CodeValue Windows Internals Course Demo Driver"
-ClassName="Samples" ; TODO: edit ClassName
+ClassName="CodeValue" ; TODO: edit ClassName
 DiskName = "CVWindowsInternalsDriver Installation Disk"
 CVWindowsInternalsDriver.DeviceDesc = "CVWindowsInternalsDriver Device"
 CVWindowsInternalsDriver.SVCDESC = "CVWindowsInternalsDriver Service"
